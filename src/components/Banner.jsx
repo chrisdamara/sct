@@ -34,6 +34,9 @@ const Banner = ({ banner }) => {
         <div className="row h-full items-center">
           <div className={`col-12 text-center`}>
             <div className="relative mb-6 mx-auto inline-block md:hidden">
+              <span className="inline-block mx-2 md:mx-0">
+                {first_name} {last_name}
+              </span>
               <div className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
                 <img
                   className="mx-auto"
@@ -68,6 +71,9 @@ const Banner = ({ banner }) => {
               <span className="inline-block mx-2 md:mx-0">
                 {first_name}
               </span>
+              <span className="inline-block mx-2 md:mx-0">
+                {last_name}
+              </span>
               <div className="relative my-4 md:my-0 hidden md:block">
                 <div className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
                   <img
@@ -97,9 +103,6 @@ const Banner = ({ banner }) => {
                   />
                 </svg>
               </div>
-              <span className="inline-block mx-2 md:mx-0">
-                {last_name}
-              </span>
             </h1>
             <div
               className="mt-5 md:mt-8 md:text-xl font-light md:max-w-xl mx-auto"

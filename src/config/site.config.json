@@ -1,12 +1,12 @@
 {
   "metaData": {
-    "title": "Surf Retreats",
-    "description": "Indian Ocean Surf Retreats",
+    "title": "Surf Coaching Trips",
+    "description": "Indian Ocean Surf Coaching Trips",
     "ogImage": "/images/ogimage.jpg",
     "keywords": "Astrojs, Portfolio, Astrojs Portfolio"
   },
-  "logo": "Surf Retreats",
-  "logoText": "Surf Retreats",
+  "logo": "Surf Coaching Trips",
+  "logoText": "Surf Coaching Trips",
   "favicon": "/images/favicon.svg",
   "baseUrl": "https://aver-astro.vercel.app/",
   "basePath": "/",
