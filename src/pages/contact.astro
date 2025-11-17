@@ -8,7 +8,6 @@ import PageHeader from "@components/PageHeader.astro";
 const contactpage = await getPage('pages', 'contact');
 if (!contactpage) return new Response(null, { status: 404, headers: { 'content-type': 'text/html' } });
 const { title, subtitle, contactForm, faq } : any = contactpage?.data;
-const { email, mailSubject, successMessage, errorMessage } = contactForm;
 
 ---
 <Layout title={title} description={subtitle}>
@@ -17,77 +16,14 @@ const { email, mailSubject, successMessage, errorMessage } = contactForm;
   <section class="py-20 md:py-28 bg-white text-dark rounded-b-2xl">
     <div class="container">
       <div class="row justify-center">
-        {contactForm && (
-          <div
-            class="md:col-10 lg:col-5 mb-24 lg:mb-0"
-            data-aos="fade-up-sm"
-          >
-            <h2 class="text-3xl font-medium mb-10 -mt-[6px]">{contactForm.title}</h2>
-            <form id="contact-form" class="pr-0 lg:pr-8" method="POST" data-send-to={email}>
-              <input
-                class="hidden"
-                type="hidden"
-                name="_subject"
-                value={mailSubject}
-              />
-              <div class="mb-6">
-                <label for="full_name" class="block mb-2 text-black">Name</label>
-                <input
-                  type="text"
-                  id="full_name"
-                  name="full_name"
-                  placeholder="Charlie Edward"
-                  class="border border-light/90 rounded-lg bg-white h-12 w-full px-4 py-4 focus:border-dark/50 outline-none focus-visible:outline-none focus-visible:shadow-none focus-visible:!bg-transparent transition-all duration-300 focus:bg-red-300"
-                  required
-                />
-              </div>
-              <div class="mb-6">
-                <label for="email" class="block mb-2 text-black">Contact email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="charlie.edward@email.app"
-                  class="border border-light/90 rounded-lg bg-white h-12 w-full px-4 py-4 focus:border-dark/50 outline-none focus-visible:outline-none focus-visible:shadow-none focus-visible:!bg-transparent transition-all duration-300"
-                  required
-                />
-              </div>
-              <div class="mb-6">
-                <label for="message" class="block mb-2 text-black">Additional info</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  class="border border-light/90 rounded-lg bg-white w-full px-4 py-4 focus:border-dark/50 outline-none focus-visible:outline-none focus-visible:shadow-none focus-visible:!bg-transparent transition-all duration-300"
-                  placeholder="Be as detailed as possible..."
-                ></textarea>
-              </div>
-
-              <div
-                id="form-success"
-                class="mb-6 text-green-700"
-                style="display:none"
-                set:html={markdownify(successMessage, true)}
-              ></div>
-              <div
-                id="form-error"
-                class="mb-6 text-red-600"
-                style="display:none"
-                set:html={markdownify(errorMessage, true)}
-              ></div>
-
-              <button
-                id="send-button"
-                class="button button-dark mt-2 cursor-pointer"
-                title="Send your Message"
-                type="submit"
-                aria-label="Send Message"
-              >
-                <span>Send Message</span>
-              </button>
-            </form>
-          </div>
-        )}
+        <div class="md:col-10 lg:col-5 mb-24 lg:mb-0" data-aos="fade-up-sm">
+          <h2 class="text-3xl font-medium mb-10 -mt-[6px]">Get in touch to book now</h2>
+          <ul class="space-y-6 text-lg">
+            <li><strong>Email:</strong> <a href="mailto:info@damarasurf.com" class="underline hover:text-blue-600">info@damarasurf.com</a></li>
+            <li><strong>WhatsApp Phone:</strong> <a href="https://wa.me/447935899441" class="underline hover:text-green-600">+44 7935 899441</a></li>
+            <li><strong>Instagram:</strong> <a href="https://instagram.com/damarasurf" class="underline hover:text-pink-600">@damarasurf</a></li>
+          </ul>
+        </div>
         {faq && faq.qaLists.length > 0 && (
           <div
             class="md:col-10 lg:col-5"
@@ -132,51 +68,6 @@ const { email, mailSubject, successMessage, errorMessage } = contactForm;
 
   <script type="module" is:inline>
     document.addEventListener("DOMContentLoaded", () => {
-      // contact-form
-      const form = document.querySelector("#contact-form");
-      const successEl = document.querySelector("#form-success");
-      const errorEl = document.querySelector("#form-error");
-      const sendBtn = document.querySelector("#send-button");
-
-      const email = form.getAttribute("data-send-to");
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        sendBtn.disabled = true;
-        sendBtn.innerHTML = "<span>Sending...</span>";
-
-        const formData = {
-          _subject: form.elements._subject.value,
-          name: form.elements.full_name.value,
-          email: form.elements.email.value,
-          message: form.elements.message.value,
-        };
-
-        try {
-          const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-          });
-
-          const result = await response.json();
-          if (response.ok) {
-            form.reset();
-            successEl.style.display = "block";
-            errorEl.style.display = "none";
-          } else {
-            throw new Error("Form submission failed");
-          }
-        } catch (err) {
-          successEl.style.display = "none";
-          errorEl.style.display = "block";
-        } finally {
-          sendBtn.disabled = false;
-          sendBtn.innerHTML = "<span>Send Message</span>";
-        }
-      });
-      // end contact-form
-
       // accordion
       const accordions = document.querySelectorAll(".accordion");
       const openAccordion = (accordion) => {

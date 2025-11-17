@@ -68,7 +68,7 @@ const AboutIntro = ({ about }) => {
               >
                 <img
                   src={item}
-                  alt="Image"
+                  alt={undefined}
                   width={500}
                   height={607}
                   className="rounded-lg bg-light/10"
