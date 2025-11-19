@@ -24,7 +24,7 @@ const whatClientsSay = aboutpage?.data?.whatClientsSay;
 ---
 
 <Layout>
-	<Banner banner={banner} client:load />
+	<Banner banner={banner} client:load noLogo />
 
 	<section class="py-20 md:py-28">
 		<div class="container">
@@ -75,11 +75,11 @@ const whatClientsSay = aboutpage?.data?.whatClientsSay;
 	        </div>
 	        <div class="sm:col-4 order-1 sm:order-2 block mb-4 sm:mb-0 text-center sm:text-right">
 	          <span class="font-secondary text-2xl leading-none text-black/75">
-	            {whatClientsSay.subtitle}
+	            <a href="https://www.trustpilot.com/review/damarasurf.com" target="_blank" rel="noopener" class="underline hover:text-blue-600 transition-colors duration-200">{whatClientsSay.subtitle}</a>
 	          </span>
 	        </div>
 	      </div>
-	      <ReviewSlider whatClientsSay={whatClientsSay} />
+	      <ReviewSlider whatClientsSay={whatClientsSay} client:load />
 	    </div>
 	  </section>
 	)}

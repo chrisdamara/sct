@@ -17,14 +17,5 @@
       "link": "/contact"
     }
   ],
-  "footerMenu": [
-    {
-      "name": "Imprint",
-      "link": "!#"
-    },
-    {
-      "name": "Privacy policy",
-      "link": "/privacy"
-    }
-  ]
+  "footerMenu": []
 }

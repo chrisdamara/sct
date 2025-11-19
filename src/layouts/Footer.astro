@@ -25,7 +25,7 @@ const animatedLines = Array.from({ length: 5 });
             <div class="line-block pb-[6px] flex">
               {animatedLines.map((_, j) => (
                 <span class="mr-24">
-                  <span class="cta-text group-hover:opacity-75">Let's go!</span>
+                  <span class="cta-text group-hover:opacity-75">Book now</span>
                   <img
                     class="inline-block ml-16 cta-icon"
                     src="/images/arrow-right.svg"
@@ -40,7 +40,7 @@ const animatedLines = Array.from({ length: 5 });
             <div class="line-block-copy pb-[6px] flex">
               {animatedLines.map((_, j) => (
                 <span class="mr-24">
-                  <span class="cta-text group-hover:opacity-75">Let's go!</span>
+                  <span class="cta-text group-hover:opacity-75">Book now</span>
                   <img
                     class="inline-block ml-16 cta-icon"
                     src="/images/arrow-right.svg"
@@ -62,11 +62,15 @@ const animatedLines = Array.from({ length: 5 });
     <div class="row">
       <div class="md:col-6 text-center md:text-left mb-4">
         <ul class="inline-flex flex-wrap justify-center md:justify-start gap-x-6">
-          {socialLinks.map((item) => (
-            <li class="inline-block hover:opacity-75 transition-op duration-300">
-              <a href={item.link} class="link">{item.fullName}</a>
-            </li>
-          ))}
+          <li class="inline-block hover:opacity-75 transition-op duration-300">
+            <a href="mailto:info@damarasurf.com" class="link">Email</a>
+          </li>
+          <li class="inline-block hover:opacity-75 transition-op duration-300">
+            <a href="https://wa.me/447935899441" class="link">Phone</a>
+          </li>
+          <li class="inline-block hover:opacity-75 transition-op duration-300">
+            <a href="https://instagram.com/damarasurf" class="link">Instagram</a>
+          </li>
         </ul>
       </div>
 

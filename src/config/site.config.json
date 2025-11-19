@@ -17,24 +17,22 @@
   },
   "socialLinks": [
     {
-      "name": "FB",
-      "fullName": "Facebook",
-      "link": "https://facebook.com/"
+      "name": "Email",
+      "fullName": "E-mail",
+      "link": "mailto:info@damarasurf.com",
+      "display": "info@damarasurf.com"
     },
     {
-      "name": "X",
-      "fullName": "X / Twitter",
-      "link": "https://twitter.com/"
+      "name": "Phone",
+      "fullName": "WhatsApp Phone",
+      "link": "https://wa.me/447935899441",
+      "display": "+447935899441"
     },
     {
-      "name": "IN",
-      "fullName": "Linkedin",
-      "link": "https://linkedin.com/"
-    },
-    {
-      "name": "GITHUB",
-      "fullName": "Github",
-      "link": "https://github.com/"
+      "name": "Instagram",
+      "fullName": "Instagram",
+      "link": "https://instagram.com/damarasurf",
+      "display": "@damarasurf"
     }
   ]
 }

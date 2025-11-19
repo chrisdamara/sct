@@ -182,11 +182,15 @@ const Header = () => {
           <div className={`w-1/4 transition-all duration-300 text-right text-sm hidden lg:block ${isScrolled ? "lg:opacity-0 lg:translate-x-8" : ""}`}>
             <span className="block text-white/75 mb-1">Social Links:</span>
             <ul className="inline-flex gap-x-4">
-              {socialLinks.map((item, key) => (
-                <li key={key} className="inline-block hover:opacity-75 transition-op duration-300">
-                  <a href={item.link} className="link">{item.name}</a>
-                </li>
-              ))}
+              <li className="inline-block hover:opacity-75 transition-op duration-300">
+                <a href="mailto:info@damarasurf.com" className="link">Email</a>
+              </li>
+              <li className="inline-block hover:opacity-75 transition-op duration-300">
+                <a href="https://wa.me/447935899441" className="link">Phone</a>
+              </li>
+              <li className="inline-block hover:opacity-75 transition-op duration-300">
+                <a href="https://instagram.com/damarasurf" className="link">Instagram</a>
+              </li>
             </ul>
           </div>
         </div>
